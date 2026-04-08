@@ -1,10 +1,8 @@
 # MCDISP-M
 
-## Introduction
-
-
 https://github.com/user-attachments/assets/0270b340-cdaa-450d-8262-8c66638cb83f
 
+## Introduction
 
 MCDISP-M is a modern port of **MCDISP.X**, a sequenced music player and display utility originally written for the Sharp X68000.
 Built around a color palette system, it blits textures from an atlas to screen space to draw piano visuals without Node overhead.
