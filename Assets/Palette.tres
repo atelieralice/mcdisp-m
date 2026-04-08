@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Palette" format=3 uid="uid://85qe0anjtxqd"]
+
+[ext_resource type="Script" uid="uid://bcbg7w5s3nf21" path="res://Assets/Scripts/Palette.cs" id="1_ub6l3"]
+
+[resource]
+script = ExtResource("1_ub6l3")
+Colors = PackedColorArray(0, 0.2901961, 0.40784314, 1, 0.32156864, 0.32156864, 0.34901962, 1, 0, 0, 0.02745098, 1, 0.81960785, 0.7294118, 0.90588236, 1, 0.23137255, 0.11372549, 0.11372549, 1, 0.90588236, 0.7019608, 0.5254902, 1, 0.46666667, 0.90588236, 0.58431375, 1, 0.7882353, 0.90588236, 0.6117647, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MCDISP"
+run/main_scene="uid://bnmqa158becwh"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+boot_splash/show_image=false
+
+[display]
+
+window/size/viewport_width=768
+window/size/viewport_height=512
+window/size/resizable=false
+window/size/maximize_disabled=true
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cv1bt8xh4kc0e"
+
+[dotnet]
+
+project/assembly_name="MCDISP"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0

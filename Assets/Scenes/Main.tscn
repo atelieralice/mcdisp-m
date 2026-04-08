@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://bnmqa158becwh"]
+
+[ext_resource type="Script" uid="uid://ccwr61pkyapw8" path="res://Assets/Scripts/Main.cs" id="1_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://dwcl6dqfh8qtm" path="res://top.png" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://t53gl3u6m8vp" path="res://bottom.png" id="2_cm0pq"]
+[ext_resource type="Resource" uid="uid://85qe0anjtxqd" path="res://Assets/Palette.tres" id="2_fos0i"]
+[ext_resource type="Texture2D" uid="uid://bqh5lr8ysit8f" path="res://Assets/Category.png" id="3_3dxm6"]
+[ext_resource type="Texture2D" uid="uid://x1x887p5dhfm" path="res://Assets/PianoBlack.png" id="3_f5dhn"]
+[ext_resource type="PackedScene" uid="uid://cd022sjbkal6c" path="res://Assets/Scenes/Track.tscn" id="3_fos0i"]
+[ext_resource type="Texture2D" uid="uid://t6dv7tggrq7k" path="res://Assets/PianoWhite.png" id="3_una2h"]
+[ext_resource type="Texture2D" uid="uid://csdspwyp70bdg" path="res://Assets/Header.png" id="4_lgr22"]
+[ext_resource type="Texture2D" uid="uid://da3rtm5hi0uoy" path="res://Assets/BarBG.png" id="5_fvpbu"]
+[ext_resource type="Script" uid="uid://cftem72nw7igo" path="res://Assets/Scripts/MidiTest.cs" id="8_trn2v"]
+[ext_resource type="FontFile" uid="uid://d0xqyxjyfru8g" path="res://Assets/sharp-x68000.otf" id="8_xycqk"]
+[ext_resource type="Script" uid="uid://dre2npws2cnv7" path="res://Assets/Scripts/DeviceSelector.cs" id="13_obb38"]
+
+[sub_resource type="FontVariation" id="FontVariation_obb38"]
+base_font = ExtResource("8_xycqk")
+spacing_glyph = -1
+
+[node name="MCDISP" type="Control" unique_id=259565289 node_paths=PackedStringArray("BG")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cm0pq")
+Palette = ExtResource("2_fos0i")
+BG = NodePath("BG")
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="." unique_id=1334621896]
+self_modulate = Color(0, 0.2901961, 0.40784314, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.890625
+metadata/_edit_lock_ = true
+
+[node name="PianoWhite" type="TextureRect" parent="." unique_id=819285586]
+modulate = Color(0.32156864, 0.32156864, 0.34901962, 1)
+layout_mode = 0
+offset_top = 28.0
+offset_right = 767.0
+offset_bottom = 954.0
+texture = ExtResource("3_una2h")
+metadata/_edit_lock_ = true
+
+[node name="PianoBlack" type="TextureRect" parent="." unique_id=1931122716]
+modulate = Color(0, 0, 0.02745098, 1)
+layout_mode = 0
+offset_right = 768.0
+offset_bottom = 960.0
+texture = ExtResource("3_f5dhn")
+metadata/_edit_lock_ = true
+
+[node name="CategoryText" type="TextureRect" parent="." unique_id=877539946]
+modulate = Color(0.90588236, 0.7019608, 0.5254902, 1)
+layout_mode = 0
+offset_top = 18.0
+offset_right = 767.0
+offset_bottom = 586.0
+texture = ExtResource("3_3dxm6")
+metadata/_edit_lock_ = true
+
+[node name="HeaderText" type="TextureRect" parent="." unique_id=372628170]
+modulate = Color(0.7882353, 0.90588236, 0.6117647, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 767.0
+offset_bottom = 702.0
+texture = ExtResource("4_lgr22")
+metadata/_edit_lock_ = true
+
+[node name="Lines" type="TextureRect" parent="." unique_id=1009304972]
+modulate = Color(0.23137255, 0.11372549, 0.11372549, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_fvpbu")
+metadata/_edit_lock_ = true
+
+[node name="TitleLabel" type="Label" parent="." unique_id=679637432]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 501.0
+offset_right = 769.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0.7882353, 0.90588236, 0.6117647, 1)
+theme_override_fonts/font = SubResource("FontVariation_obb38")
+theme_override_font_sizes/font_size = 9
+
+[node name="Track1" parent="." unique_id=2014004992 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 27.0
+offset_bottom = 27.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track2" parent="." unique_id=1568296048 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 51.0
+offset_bottom = 51.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track3" parent="." unique_id=82737266 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 75.0
+offset_bottom = 75.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track4" parent="." unique_id=1192456393 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 99.0
+offset_bottom = 99.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track5" parent="." unique_id=1608637581 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 123.0
+offset_bottom = 123.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track6" parent="." unique_id=943772037 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 147.0
+offset_bottom = 147.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track7" parent="." unique_id=694664407 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 171.0
+offset_bottom = 171.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track8" parent="." unique_id=995996667 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 195.0
+offset_bottom = 195.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track9" parent="." unique_id=419546253 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 219.0
+offset_bottom = 219.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track10" parent="." unique_id=630177517 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 243.0
+offset_bottom = 243.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track11" parent="." unique_id=2016332704 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 267.0
+offset_bottom = 267.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track12" parent="." unique_id=1664053331 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 291.0
+offset_bottom = 291.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track13" parent="." unique_id=872232566 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 315.0
+offset_bottom = 315.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track14" parent="." unique_id=2067163498 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 339.0
+offset_bottom = 339.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track15" parent="." unique_id=194594487 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 363.0
+offset_bottom = 363.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track16" parent="." unique_id=1198018715 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 387.0
+offset_bottom = 387.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track17" parent="." unique_id=1250253041 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 411.0
+offset_bottom = 411.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Track18" parent="." unique_id=1629816589 instance=ExtResource("3_fos0i")]
+layout_mode = 0
+offset_top = 435.0
+offset_bottom = 435.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Overlay" type="Node2D" parent="." unique_id=949257465]
+visible = false
+modulate = Color(1, 1, 1, 0.23921569)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Overlay" unique_id=420758580]
+position = Vector2(384, 256)
+texture = ExtResource("1_r0du0")
+
+[node name="Bottom" type="Sprite2D" parent="Overlay" unique_id=1039847336]
+position = Vector2(384, 712)
+texture = ExtResource("2_cm0pq")
+
+[node name="MidiTest" type="Node" parent="." unique_id=1112371392 node_paths=PackedStringArray("TargetTrack")]
+script = ExtResource("8_trn2v")
+TargetTrack = NodePath("../Track1")
+metadata/_custom_type_script = "uid://cftem72nw7igo"
+
+[node name="Device Selector" type="Window" parent="." unique_id=161913390]
+disable_3d = true
+oversampling_override = 1.0
+title = "Select Output Device"
+position = Vector2i(0, 36)
+visible = false
+script = ExtResource("13_obb38")
+
+[node name="Panel" type="Panel" parent="Device Selector" unique_id=424709955]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Device Selector/Panel" unique_id=93334694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Device Selector/Panel/ScrollContainer" unique_id=140706573]
+layout_mode = 2

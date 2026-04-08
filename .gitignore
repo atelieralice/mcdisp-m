@@ -1,0 +1,23 @@
+# Godot
+.godot/
+*.import
+*.uid
+/android/
+/export/
+/exports/
+
+# C# & .NET
+bin/
+obj/
+*.csproj.user
+.vs/
+
+# Backups
+*.backup
+*.bak
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
+.directory

@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://cd022sjbkal6c"]
+
+[ext_resource type="Script" uid="uid://xxn7q12ibpwd" path="res://Assets/Scripts/Track.cs" id="1_8dni2"]
+[ext_resource type="Texture2D" uid="uid://bwrlqce70ii2a" path="res://Assets/Piano.png" id="1_onqjq"]
+[ext_resource type="Resource" uid="uid://85qe0anjtxqd" path="res://Assets/Palette.tres" id="2_fo0vr"]
+[ext_resource type="Texture2D" uid="uid://cdm7tggai08hh" path="res://Assets/PianoKeys.png" id="3_0j5gg"]
+[ext_resource type="Script" uid="uid://dcgwd73ytdheh" path="res://Assets/Scripts/PitchIndicator.cs" id="5_hkw1s"]
+[ext_resource type="StyleBox" uid="uid://s501jwa0usam" path="res://Assets/ProgressFill.tres" id="6_gg2cs"]
+[ext_resource type="StyleBox" uid="uid://dbtnsth835onm" path="res://Assets/ProgressBackground.tres" id="6_w0lbc"]
+[ext_resource type="Script" uid="uid://bvnffl3wnin1i" path="res://Assets/Scripts/PanpotIndicator.cs" id="8_btm8b"]
+[ext_resource type="Script" uid="uid://bx0hen5ip3tps" path="res://Assets/Scripts/Indicator.cs" id="8_u5a6x"]
+
+[node name="Track" type="Control" unique_id=2014004992 node_paths=PackedStringArray("PitchIndicator", "VelocityBar", "VelocityIndicator", "ExpressBar", "ExpressIndicator", "VolumeBar", "VolumeIndicator", "PanpotIndicator", "ReverbBar", "ReverbIndicator", "ChorusBar", "ChorusIndicator")]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_8dni2")
+Palette = ExtResource("2_fo0vr")
+PianoKeys = ExtResource("3_0j5gg")
+PitchIndicator = NodePath("PitchIndicator")
+VelocityBar = NodePath("VelocityBar")
+VelocityIndicator = NodePath("VelocityBar/VelocityIndicator")
+ExpressBar = NodePath("ExpressBar")
+ExpressIndicator = NodePath("ExpressBar/ExpressIndicator")
+VolumeBar = NodePath("VolumeBar")
+VolumeIndicator = NodePath("VolumeBar/VolumeIndicator")
+PanpotIndicator = NodePath("PanpotIndicator")
+ReverbBar = NodePath("ReverbBar")
+ReverbIndicator = NodePath("ReverbBar/ReverbIndicator")
+ChorusBar = NodePath("ChorusBar")
+ChorusIndicator = NodePath("ChorusBar/ChorusIndicator")
+metadata/_edit_vertical_guides_ = [304.0]
+metadata/_edit_horizontal_guides_ = [19.0]
+
+[node name="Piano" type="TextureRect" parent="." unique_id=1914079728]
+visible = false
+z_index = -1
+layout_mode = 1
+offset_right = 303.0
+offset_bottom = 21.0
+texture = ExtResource("1_onqjq")
+metadata/_edit_use_anchors_ = true
+
+[node name="PitchIndicator" type="ColorRect" parent="." unique_id=1872268930]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_left = 144.0
+offset_top = -2.0
+offset_right = 145.0
+script = ExtResource("5_hkw1s")
+
+[node name="VelocityBar" type="ProgressBar" parent="." unique_id=1943498871]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 15.0
+offset_right = 336.0
+offset_bottom = 19.0
+theme_override_styles/background = ExtResource("6_w0lbc")
+theme_override_styles/fill = ExtResource("6_gg2cs")
+max_value = 127.0
+step = 1.0
+show_percentage = false
+
+[node name="VelocityIndicator" type="ColorRect" parent="VelocityBar" unique_id=164786097]
+visible = false
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 4.0
+script = ExtResource("8_u5a6x")
+metadata/_custom_type_script = "uid://bx0hen5ip3tps"
+
+[node name="ExpressBar" type="ProgressBar" parent="." unique_id=1354340394]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_left = 368.0
+offset_top = 15.0
+offset_right = 400.0
+offset_bottom = 19.0
+theme_override_styles/background = ExtResource("6_w0lbc")
+theme_override_styles/fill = ExtResource("6_gg2cs")
+max_value = 127.0
+step = 1.0
+show_percentage = false
+
+[node name="ExpressIndicator" type="ColorRect" parent="ExpressBar" unique_id=2091492552]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 4.0
+script = ExtResource("8_u5a6x")
+metadata/_custom_type_script = "uid://bx0hen5ip3tps"
+
+[node name="VolumeBar" type="ProgressBar" parent="." unique_id=335168166]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_left = 432.0
+offset_top = 15.0
+offset_right = 464.0
+offset_bottom = 19.0
+theme_override_styles/background = ExtResource("6_w0lbc")
+theme_override_styles/fill = ExtResource("6_gg2cs")
+max_value = 127.0
+step = 1.0
+show_percentage = false
+
+[node name="VolumeIndicator" type="ColorRect" parent="VolumeBar" unique_id=222725698]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 4.0
+script = ExtResource("8_u5a6x")
+metadata/_custom_type_script = "uid://bx0hen5ip3tps"
+
+[node name="PanpotIndicator" type="ColorRect" parent="." unique_id=1249653464]
+self_modulate = Color(0.46666667, 0.90588236, 0.58431375, 1)
+layout_mode = 0
+offset_left = 512.0
+offset_top = 15.0
+offset_right = 513.0
+offset_bottom = 19.0
+script = ExtResource("8_btm8b")
+
+[node name="ReverbBar" type="ProgressBar" parent="." unique_id=197088666]
+self_modulate = Color(0.90588236, 0.7019608, 0.5254902, 1)
+layout_mode = 0
+offset_left = 560.0
+offset_top = 15.0
+offset_right = 592.0
+offset_bottom = 19.0
+theme_override_styles/background = ExtResource("6_w0lbc")
+theme_override_styles/fill = ExtResource("6_gg2cs")
+max_value = 127.0
+step = 1.0
+show_percentage = false
+
+[node name="ReverbIndicator" type="ColorRect" parent="ReverbBar" unique_id=1046930415]
+self_modulate = Color(0.90588236, 0.7019608, 0.5254902, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 4.0
+script = ExtResource("8_u5a6x")
+metadata/_custom_type_script = "uid://bx0hen5ip3tps"
+
+[node name="ChorusBar" type="ProgressBar" parent="." unique_id=1334516508]
+self_modulate = Color(0.90588236, 0.7019608, 0.5254902, 1)
+layout_mode = 0
+offset_left = 624.0
+offset_top = 15.0
+offset_right = 656.0
+offset_bottom = 19.0
+theme_override_styles/background = ExtResource("6_w0lbc")
+theme_override_styles/fill = ExtResource("6_gg2cs")
+max_value = 127.0
+step = 1.0
+show_percentage = false
+
+[node name="ChorusIndicator" type="ColorRect" parent="ChorusBar" unique_id=362201383]
+self_modulate = Color(0.90588236, 0.7019608, 0.5254902, 1)
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 4.0
+script = ExtResource("8_u5a6x")
+metadata/_custom_type_script = "uid://bx0hen5ip3tps"
