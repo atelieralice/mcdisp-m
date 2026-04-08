@@ -53,7 +53,7 @@ The Windows binary uses **Native AOT** and a custom export template I compiled f
 | .NET libraries | 83 MB | 22 MB |
 | Engine code | 102 MB | 32 MB |
 
-## Credits / Third-Party Libraries & Assets
+## Credits / Third-Party
 
 - **DryWetMIDI** by Melanchall – MIDI file parsing, playback, and device output ([NuGet](https://www.nuget.org/packages/Melanchall.DryWetMidi))
 - **sharp-x68000.otf** – Font based on the Sharp X68000 character ROM, by [DamienG](https://fontstruct.com/fontstructions/show/2585848/sharp-x68000)
